@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Eat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject _square;
+    [SerializeField] private GameObject _circle;
+    [SerializeField] private GameObject _hexagon;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _square.gameObject.SetActive(true);
+        _circle.gameObject.SetActive(false);
+        _hexagon.gameObject.SetActive(false);   
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+
+        
         if(collider.GetComponent<Shapes>() != null) 
         {
             var shape = collider.GetComponent<Shapes>();
@@ -27,15 +30,22 @@ public class Eat : MonoBehaviour
                     break;
                 case EatableShapes.Circle:
                     Destroy(shape.gameObject);
-
+                    _square.gameObject.SetActive(false);
+                    _circle.gameObject.SetActive(true);
+                    _hexagon.gameObject.SetActive(false);
                     break;
                 case EatableShapes.Square:
                     Destroy(shape.gameObject);
+                    _square.gameObject.SetActive(true);
+                    _circle.gameObject.SetActive(false);
+                    _hexagon.gameObject.SetActive(false);
                     break;
                 case EatableShapes.Hexagon:
                     Destroy(shape.gameObject);
+                    _square.gameObject.SetActive(false);
+                    _circle.gameObject.SetActive(false);
+                    _hexagon.gameObject.SetActive(true);
                     break;
-
             }
         }
     }
