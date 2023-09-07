@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _whereToMove;
     private bool _isMoving = false;
 
-
     private void Start()
     { 
         _rb = GetComponent<Rigidbody2D>();
@@ -27,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(_isMoving) 
+        if (_isMoving) 
         {
             _currentDistanceToTouchPos = (_touchPosition - transform.position).magnitude;
         }
