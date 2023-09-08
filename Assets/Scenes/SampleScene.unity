@@ -137,15 +137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2282814883615290298, guid: a4cbe71c345feaf47ad2ad24a4a975f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.059723
+      value: 62.21
       objectReference: {fileID: 0}
     - target: {fileID: 2282814883615290298, guid: a4cbe71c345feaf47ad2ad24a4a975f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2282814883615290298, guid: a4cbe71c345feaf47ad2ad24a4a975f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38894892
+      value: 0.38894892
       objectReference: {fileID: 0}
     - target: {fileID: 2282814883615290298, guid: a4cbe71c345feaf47ad2ad24a4a975f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -217,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280163542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.36, y: -0.06, z: 0}
+  m_LocalPosition: {x: 0, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -388,7 +388,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.680557
+  orthographic size: 8.557953
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -412,7 +412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: -0.14, z: -10}
+  m_LocalPosition: {x: 0, y: -0.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -541,7 +541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160722650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.34, y: -0.04, z: -10}
+  m_LocalPosition: {x: 14.1, y: -0.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -681,15 +681,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 578803348125724595, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.862467
+      value: -19.81
       objectReference: {fileID: 0}
     - target: {fileID: 578803348125724595, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04215762
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 578803348125724595, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38894892
+      value: 0.38894892
       objectReference: {fileID: 0}
     - target: {fileID: 578803348125724595, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
       propertyPath: m_LocalRotation.w
@@ -731,6 +731,11 @@ PrefabInstance:
 --- !u!4 &1437285786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578803348125724595, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
+  m_PrefabInstance: {fileID: 1437285785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1437285787 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4183660728758167309, guid: 547bf700550cabe499ad6e9a7d573796, type: 3}
   m_PrefabInstance: {fileID: 1437285785}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1769701503
@@ -808,15 +813,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4036514078828192542, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.357124
+      value: 21.15
       objectReference: {fileID: 0}
     - target: {fileID: 4036514078828192542, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.059999973
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4036514078828192542, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.38894892
+      value: 0.38894892
       objectReference: {fileID: 0}
     - target: {fileID: 4036514078828192542, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -860,6 +865,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4036514078828192542, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
   m_PrefabInstance: {fileID: 1819194562}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1819194564 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3327724964028521473, guid: a43b76f052a8ade438531eabaed09ef9, type: 3}
+  m_PrefabInstance: {fileID: 1819194562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1902536009 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6981595634186608323, guid: a4cbe71c345feaf47ad2ad24a4a975f7, type: 3}
+  m_PrefabInstance: {fileID: 186218575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923061980
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1923061981}
+  - component: {fileID: 1923061982}
   m_Layer: 0
   m_Name: BackgroundMover
   m_TagString: Untagged
@@ -884,13 +900,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923061980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.07, y: -0.03, z: 0.38894892}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 186218576}
   - {fileID: 1437285786}
   - {fileID: 1819194563}
+  - {fileID: 186218576}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923061982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923061980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607bfaf9c57f3cf41a2e8c3954a265ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _background1: {fileID: 1437285786}
+  _background2: {fileID: 1819194563}
+  _background3: {fileID: 186218576}
+  _background1sp: {fileID: 1437285787}
+  _background2sp: {fileID: 1819194564}
+  _background3sp: {fileID: 1902536009}
+  _cam: {fileID: 519420032}
