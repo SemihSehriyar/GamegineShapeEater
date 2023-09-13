@@ -8,7 +8,6 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    //public Rigidbody2D _rb;
     private float _speed = 3f;
     private float _speedVertical = 5f;
     private float _previousDistanceToTouchPos;
