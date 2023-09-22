@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D _rb;
+    public Rigidbody2D _rb;
     private float _speed = 3f;
     private float _speedVertical = 5f;
     private float _previousDistanceToTouchPos;
@@ -26,10 +26,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.touchCount > 0)
         {
             _touch = Input.GetTouch(0);
-
             if (_touch.phase == TouchPhase.Began)
             {
-                Debug.Log(Camera.main.ScreenToWorldPoint(_touch.position));
                 if (Camera.main.ScreenToWorldPoint(_touch.position).y < transform.position.y)
                 {
                     transform.eulerAngles = new Vector3(0, 0, -45);
