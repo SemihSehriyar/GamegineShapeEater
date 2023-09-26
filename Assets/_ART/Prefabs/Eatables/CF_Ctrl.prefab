@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5889087308862216270}
   - component: {fileID: 336893714563545907}
-  - component: {fileID: 538842145243349358}
+  - component: {fileID: 7911391545576306627}
   m_Layer: 0
   m_Name: CF_Ctrl
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 9074789650272598521}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &336893714563545907
 BoxCollider2D:
@@ -79,7 +79,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &538842145243349358
+--- !u!114 &7911391545576306627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,10 +88,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3100406801833624591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6658d4b6434313740a3c7a0f75cc81b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 641c57dd20b425243994d318a408840a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatables: 1
+  _model:
+    sprite: {fileID: 1944363524660670524, guid: ac2a753bdde29de48846171b47c4ddc8, type: 3}
+    animator: {fileID: 9100000, guid: c70357d52a8259b4ea589078f0ed63b3, type: 2}
+    color: {r: 0.83921576, g: 0.14509805, b: 0.14509805, a: 1}
 --- !u!1 &6370581384993232742
 GameObject:
   m_ObjectHideFlags: 0
