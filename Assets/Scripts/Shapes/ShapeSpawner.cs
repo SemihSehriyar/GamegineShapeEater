@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShapeSpawner : MonoBehaviour
 {
-	[SerializeField] public List<GameObject> _deletedObj;
 	private Rigidbody2D _rb;
 	private GameObject _shapeToSpawn;
+	[SerializeField] public List<GameObject> _deletedObj;
 	[SerializeField] private GameObject[] _shapePrefabs;
 	[SerializeField] private float _secondSpawn;
 	[SerializeField] private float _speed;

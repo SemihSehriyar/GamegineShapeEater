@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D _rb;
+    private Rigidbody2D _rb;
+    public Rigidbody2D Rigidbody { get { return _rb; } }
     private float _speed = 3f;
     private float _speedVertical = 5f;
     private float _previousDistanceToTouchPos;
@@ -15,6 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        Missions.OnGameEnd += GameEnd;
+    }
+
+    private void GameEnd()
+    {
+        _rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     private void Update()
@@ -63,8 +72,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate()
     {
         _rb.velocity = new Vector2(_speed, _rb.velocity.y);
+    }
+
+    private void OnDestroy()
+    {
+        Missions.OnGameEnd -= GameEnd;
     }
 }

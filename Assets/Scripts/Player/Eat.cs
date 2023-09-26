@@ -1,9 +1,10 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class Eat : MonoBehaviour
 {
-    [SerializeField] private Missions _mission;
+    //[SerializeField] private Missions _mission;
     [SerializeField] private GameObject _square;
     [SerializeField] private GameObject _circle;
     [SerializeField] private GameObject _hexagon;
@@ -11,15 +12,18 @@ public class Eat : MonoBehaviour
 
     [SerializeField] private float _duration;
     [SerializeField] private float _strength;
-    [SerializeField] private int _vibrato;
     [SerializeField] private float _randomness;
+    [SerializeField] private int _vibrato;
+
+    public static event Action<EatableShapes> OnEat;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {  
         if(collider.GetComponent<Shapes>() != null) 
         {
             Shapes shape = collider.GetComponent<Shapes>();
-            _mission.EatedShape(shape.eatables);
+            //_mission.EatedShape(shape.eatables);
+            OnEat?.Invoke(shape.eatables);
             switch (shape.eatables) 
             {
                 case EatableShapes.None: 
@@ -27,7 +31,6 @@ public class Eat : MonoBehaviour
 
                 case EatableShapes.Circle:
 
-                    _eatSrc.Play();
                     Destroy(shape.gameObject);
                     _square.gameObject.SetActive(false);
                     _circle.gameObject.SetActive(true);
@@ -36,7 +39,6 @@ public class Eat : MonoBehaviour
 
                 case EatableShapes.Square:
 
-                    _eatSrc.Play();
                     Destroy(shape.gameObject);
                     _square.gameObject.SetActive(true);
                     _circle.gameObject.SetActive(false);
@@ -45,7 +47,6 @@ public class Eat : MonoBehaviour
 
                 case EatableShapes.Hexagon:
 
-                    _eatSrc.Play();
                     Destroy(shape.gameObject);
                     _square.gameObject.SetActive(false);
                     _circle.gameObject.SetActive(false);

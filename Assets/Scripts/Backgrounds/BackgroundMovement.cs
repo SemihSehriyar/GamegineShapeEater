@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class BackgroundMovement : MonoBehaviour
 {
+    private float _currentLenght;
+
     [SerializeField] private Transform _background1;
     [SerializeField] private Transform _background2;
     [SerializeField] private Transform _background3;
+    [SerializeField] private Transform _cam;
     [SerializeField] private SpriteRenderer _background1sp;
     [SerializeField] private SpriteRenderer _background2sp;
     [SerializeField] private SpriteRenderer _background3sp;
-    [SerializeField] private Transform _cam;
-
-    private float _currentLenght;
 
     private void Start()
     {
