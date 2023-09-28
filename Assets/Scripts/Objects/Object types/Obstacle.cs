@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public abstract class Eatable : MonoBehaviour, ICollectable
+public class Obstacle : MonoBehaviour
 {
-	public abstract GameObject OnHit();
+	public void OnHit()
+	{
+		
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

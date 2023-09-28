@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Circle : Eatable
 {
-	public override ShapeInfo OnHit()
+	[SerializeField] private GameObject _circle;
+
+	public override GameObject OnHit()
 	{
-		return _model;
+		Destroy(gameObject);
+		return _circle;
 	}
 }

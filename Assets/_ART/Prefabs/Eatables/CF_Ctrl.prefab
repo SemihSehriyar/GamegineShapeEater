@@ -91,10 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641c57dd20b425243994d318a408840a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _model:
-    sprite: {fileID: 1944363524660670524, guid: ac2a753bdde29de48846171b47c4ddc8, type: 3}
-    animator: {fileID: 9100000, guid: c70357d52a8259b4ea589078f0ed63b3, type: 2}
-    color: {r: 0.83921576, g: 0.14509805, b: 0.14509805, a: 1}
+  _circle: {fileID: 7331112583559886420, guid: b804142bf0fb41046af3c56c913ee45a, type: 3}
 --- !u!1 &6370581384993232742
 GameObject:
   m_ObjectHideFlags: 0

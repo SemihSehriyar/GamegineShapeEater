@@ -175,7 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133e4346c259b524dab3940a126b1667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _model:
-    sprite: {fileID: 8087288068808595137, guid: ac2a753bdde29de48846171b47c4ddc8, type: 3}
-    animator: {fileID: 9100000, guid: 09633ef75ba7c9d42907de49cc5d9093, type: 2}
-    color: {r: 0.20392159, g: 0.8431373, b: 0.16862746, a: 1}
+  _hexagon: {fileID: 1800945588304686273, guid: de0bfc5edcfa7e44cbf968a18295f7f4, type: 3}

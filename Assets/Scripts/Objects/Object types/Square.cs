@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Square : Eatable
 {
-	public override ShapeInfo OnHit()
+	[SerializeField] private GameObject _square;
+
+	public override GameObject OnHit()
 	{
-		return _model;
+		Destroy(gameObject);
+		return _square;
 	}
 }

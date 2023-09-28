@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Hexagon : Eatable
 {
-	public override ShapeInfo OnHit()
+	[SerializeField] private GameObject _hexagon;
+
+	public override GameObject OnHit()
 	{
-		return _model;
+		Destroy(gameObject);
+		return _hexagon;
 	}
 }

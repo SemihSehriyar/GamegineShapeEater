@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using UnityEngine;
 
 public class StartGame : MonoBehaviour
@@ -12,10 +12,10 @@ public class StartGame : MonoBehaviour
 
     private void Start()
 	{
-		/*		_player.enabled = false;
+		*//*		_player.enabled = false;
 				_spawner.SetActive(false);
 				_missionBG.SetActive(false);
-				_confetti.SetActive(false);*/
+				_confetti.SetActive(false);*//*
 		StartGame.OnGameStart += PlayGame;
     }
 
@@ -32,4 +32,4 @@ public class StartGame : MonoBehaviour
     {
         StartGame.OnGameStart -= PlayGame;
     }
-}
+}*/

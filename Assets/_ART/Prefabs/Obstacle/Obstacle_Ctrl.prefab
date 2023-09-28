@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071551198354394458}
   - component: {fileID: 6332758545270043795}
-  - component: {fileID: 2815784559832484534}
+  - component: {fileID: 7837077017859254427}
   m_Layer: 0
   m_Name: Obstacle_Ctrl
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 3373812694317016780}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6332758545270043795
 BoxCollider2D:
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.476058, y: 1.4327806}
   m_EdgeRadius: 0
---- !u!114 &2815784559832484534
+--- !u!114 &7837077017859254427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8683744047703678948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6658d4b6434313740a3c7a0f75cc81b8, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d999f6d7da48f4a8ffe78733599aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatables: 4
+  _obstacle: {fileID: 8683744047703678948}
+  _duration: 1
+  _strength: 0.1
+  _randomness: 1
+  _vibrato: 1

@@ -175,7 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d618dd7cde55e4d8163d5ea19d1dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _model:
-    spriteRenderer: {fileID: -3956945410347281411, guid: ac2a753bdde29de48846171b47c4ddc8, type: 3}
-    animator: {fileID: 9100000, guid: c851ec60ba7fdee4195076d81e49e26c, type: 2}
-    color: {r: 0.10196079, g: 0.7372549, b: 0.83921576, a: 0}
+  _square: {fileID: 263255323609223467, guid: a6ec5560f4771594985f049c3c5e2383, type: 3}

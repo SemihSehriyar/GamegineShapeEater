@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -6,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D _rb;
 	[SerializeField] private float _speedRb;
 	[SerializeField] private float _speed;
+	[SerializeField] private float _duration;
+	[SerializeField] private float _strength;
+	[SerializeField] private float _randomness;
+	[SerializeField] private int _vibrato;
 	[SerializeField] private Vector3 _rotateUp;
 	[SerializeField] private Vector3 _rotateDown;
 	[SerializeField] private Transform _model;
@@ -15,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.velocity = new Vector2(_speedRb, 0);
 		_clickedPos.y = transform.position.y;
+		PlayerCollide.OnHit += Shake;
+	}
+
+	private void OnDestroy()
+	{
+		PlayerCollide.OnHit -= Shake;
 	}
 
 	private void Update()
@@ -45,5 +56,14 @@ public class PlayerMovement : MonoBehaviour
 			transform.position = Vector2.MoveTowards(transform.position, _clickedPos, _speed * Time.deltaTime);
 			_model.rotation = Quaternion.Euler(_rotateDown);
 		}
+	}
+
+	private void Shake()
+	{ 
+		_rb.velocity = Vector3.zero;
+		_model.transform.DOShakePosition(_duration, _strength, _vibrato, _randomness).OnComplete(() =>
+		{ 
+			_rb.velocity = new Vector2(_speedRb, 0);
+		});
 	}
 }

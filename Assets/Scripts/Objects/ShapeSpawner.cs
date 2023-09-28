@@ -1,40 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShapeSpawner : MonoBehaviour
 {
 	private Rigidbody2D _rb;
-	private GameObject _shapeToSpawn;
-	[SerializeField] public List<GameObject> _deletedObj;
-	[SerializeField] private GameObject[] _shapePrefabs;
-	[SerializeField] private float _secondSpawn;
-	[SerializeField] private float _speed;
-	[SerializeField] private float _yPos;
+	private float _currentRate;
+	[SerializeField] private int _speedRb;
+	[SerializeField] float _minRate;
+	[SerializeField] float _maxRate;
+	[SerializeField] float _maxSpawnRate;
+	[SerializeField] Vector2 _min;
+	[SerializeField] Vector2 _max;
+	[SerializeField] GameObject[] _shapes;
 
 	private void Start()
 	{
-		_secondSpawn = 0.5f;
-		StartCoroutine(ShapeSpawn());
 		_rb = GetComponent<Rigidbody2D>();
-		_deletedObj = new List<GameObject>();
+		_rb.velocity = new Vector2(_speedRb, 0);
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
-		_rb.velocity = new Vector2(_speed, _rb.velocity.y);
-	}
+		_currentRate += Time.deltaTime;
 
-	public IEnumerator ShapeSpawn()
-	{
-		while (true)
+		if (_currentRate > _maxSpawnRate)
 		{
-			WaitForSeconds wait = new WaitForSeconds(_secondSpawn);
-			_yPos = Random.Range(-1.5f, 1.5f) * 5;
-			yield return wait;
-			int rand = Random.Range(0, _shapePrefabs.Length);
-			_shapeToSpawn = _shapePrefabs[rand];
-			_deletedObj.Add(Instantiate(_shapeToSpawn, new Vector3(transform.position.x, _yPos, transform.position.z), Quaternion.identity));
+			RandomRate();
+			Spawn();
 		}
+	}
+
+	private void Spawn()
+	{
+		float randomY = Random.Range(_min.y, _max.y);
+		Vector3 randomPosition = new Vector3(transform.position.x, randomY, 0f);
+		Instantiate(_shapes[Random.Range(0, _shapes.Length)], randomPosition, Quaternion.identity);
+	}
+
+	private void RandomRate() 
+	{
+		_currentRate = 0f;
+		_maxSpawnRate = Random.Range(_minRate, _maxRate);
 	}
 }
