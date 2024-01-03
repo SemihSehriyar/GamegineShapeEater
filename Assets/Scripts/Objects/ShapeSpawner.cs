@@ -16,6 +16,12 @@ public class ShapeSpawner : MonoBehaviour
 	{
 		_rb = GetComponent<Rigidbody2D>();
 		_rb.velocity = new Vector2(_speedRb, 0);
+		Missions.OnGameFinish += StopSpawn;
+	}
+
+	private void OnDestroy()
+	{
+		Missions.OnGameFinish -= StopSpawn;
 	}
 
 	private void Update()
@@ -40,5 +46,10 @@ public class ShapeSpawner : MonoBehaviour
 	{
 		_currentRate = 0f;
 		_maxSpawnRate = Random.Range(_minRate, _maxRate);
+	}
+
+	private void StopSpawn()
+	{
+		enabled = false;
 	}
 }

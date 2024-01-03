@@ -4,7 +4,12 @@ public class Hexagon : Eatable
 {
 	[SerializeField] private GameObject _hexagon;
 
-	public override GameObject OnHit()
+	public override EatableShapes GetMyShape()
+	{
+		return EatableShapes.Hexagon;
+	}
+
+	public override GameObject GetPlayerShape()
 	{
 		Destroy(gameObject);
 		return _hexagon;

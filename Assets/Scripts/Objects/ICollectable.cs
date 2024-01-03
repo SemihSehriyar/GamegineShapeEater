@@ -2,5 +2,6 @@ using UnityEngine;
 
 public interface ICollectable 
 {
-    GameObject OnHit();
+    GameObject GetPlayerShape();
+    EatableShapes GetMyShape();
 }

@@ -21,11 +21,16 @@ public class PlayerMovement : MonoBehaviour
 		_rb.velocity = new Vector2(_speedRb, 0);
 		_clickedPos.y = transform.position.y;
 		PlayerCollide.OnHit += Shake;
+		Missions.OnGameFinish += Freeze;
+		UIManager.OnGameStart += StartMove;
+		Freeze();
 	}
 
 	private void OnDestroy()
 	{
 		PlayerCollide.OnHit -= Shake;
+		Missions.OnGameFinish -= Freeze;
+		UIManager.OnGameStart -= StartMove;
 	}
 
 	private void Update()
@@ -39,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			_clickedPos.y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
 		}
-		if (Mathf.Abs(_clickedPos.y - transform.position.y) < 0.1f)
+		if (Mathf.Abs(_clickedPos.y - transform.position.y) <= float.Epsilon)
 		{
 			transform.position = new Vector2(transform.position.x, _clickedPos.y);
 			_model.rotation = Quaternion.Euler(Vector3.zero);
@@ -50,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 			transform.position = Vector2.MoveTowards(transform.position, _clickedPos, _speed * Time.deltaTime);
 			_model.rotation = Quaternion.Euler(_rotateUp);
 		}
-		else
+		else if (_clickedPos.y - transform.position.y < 0f)
 		{
 			_clickedPos.x = transform.position.x;
 			transform.position = Vector2.MoveTowards(transform.position, _clickedPos, _speed * Time.deltaTime);
@@ -59,11 +64,25 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	private void Shake()
-	{ 
-		_rb.velocity = Vector3.zero;
+	{
+		Freeze();
 		_model.transform.DOShakePosition(_duration, _strength, _vibrato, _randomness).OnComplete(() =>
-		{ 
-			_rb.velocity = new Vector2(_speedRb, 0);
+		{
+			StartMove();
 		});
+	}
+
+	private void Freeze()
+	{
+		enabled = false;
+		_rb.velocity = Vector3.zero;
+		_model.rotation = Quaternion.Euler(Vector3.zero);
+		_clickedPos.y = transform.position.y;
+	}
+
+	private void StartMove()
+	{
+		_rb.velocity = new Vector2(_speedRb, 0);
+		enabled = true;
 	}
 }
